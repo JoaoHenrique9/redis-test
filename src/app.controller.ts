@@ -29,7 +29,7 @@ export class RedisController {
   }
 
   @Post(':key')
-  async posValue(@Param('key') key: string): Promise<any> {
+  async postValue(@Param('key') key: string): Promise<any> {
     const result = await this.redisService.get(key);
     return result ? JSON.parse(result) : null;
   }
@@ -47,7 +47,7 @@ export class RedisController {
   }
 
   @Delete(':key')
-  async DeleteValue(@Param('key') key: string): Promise<any> {
+  async deleteValue(@Param('key') key: string): Promise<any> {
     const result = await this.redisService.get(key);
     return result ? JSON.parse(result) : null;
   }
